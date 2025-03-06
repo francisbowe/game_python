@@ -21,15 +21,25 @@ def game_corp():
     word = random.choice(words) #escolhe uma palavra aleatoria
     word = word.lower() 
     
-    words_list = ['_' for i in word] 
+    words_list = ['_' for letra in word] 
     
     #numero de chances
     chances = 6
-    while chances < 6:
-        print("".join(words_list))
+    while chances > 0:
+        print(" ".join(words_list))
         print("\nChances Restante: ", chances)
-        print("\nLetras erradas: ", "" .join(wrong_letters)) 
+        print("\nLetras erradas: ", " " .join(wrong_letters)) 
+        
+        #tentaivas
         tentativa = input("\nDigite uma letra: ").lower()
-    
+        if tentativa in word:
+            index = 0
+            for letra in word:
+                if tentativa == letra:
+                    words_list[index] = letra
+                index += 1
+        else:
+            chances -= 1
+            wrong_letters.append(tentativa)
     #lista de letras erradas
     wrong_letters = []
