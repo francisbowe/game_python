@@ -1,4 +1,7 @@
 from funtcion.functions import * 
 
-clear_screen ()
+
+if __name__ == '__main__':
+    game_corp()
+    print("\nParabens. Voce esta apredendo programacao em Python com a DSA \n")
 

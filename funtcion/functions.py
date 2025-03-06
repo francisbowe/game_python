@@ -25,6 +25,8 @@ def game_corp():
     
     #numero de chances
     chances = 6
+     #lista de letras erradas
+    wrong_letters = []
     while chances > 0:
         print(" ".join(words_list))
         print("\nChances Restante: ", chances)
@@ -41,5 +43,10 @@ def game_corp():
         else:
             chances -= 1
             wrong_letters.append(tentativa)
-    #lista de letras erradas
-    wrong_letters = []
+        if "_" not in words_list:
+            print("Parabéns, você acertou a palavra! ", word)
+            break
+    if "_" in words_list:
+        print("Você perdeu! A palavra era: ", word)
+        
+   
